@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "records": {
+    "chain": {
+      "label": "Chain",
+      "state": "stated",
+      "value": "Solana",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-13"
+    },
+    "rpc": {
+      "label": "RPC",
+      "state": "stated",
+      "url": "https://solana-rpc.publicnode.com",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-13"
+    },
+    "ca": {
+      "label": "CA",
+      "state": "absent",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-13"
+    },
+    "x": {
+      "label": "X",
+      "state": "stated",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-13",
+      "url": "https://x.com/agentvaloria"
+    },
+    "github": {
+      "label": "GitHub",
+      "state": "stated",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-13",
+      "url": "https://github.com/agentvaloria/agentvaloria-protocol"
+    },
+    "market-source": {
+      "label": "Market",
+      "state": "stated",
+      "url": "https://api.dexscreener.com/token-boosts/top/v1",
+      "pairsUrl": "https://api.dexscreener.com/tokens/v1/solana/{addresses}",
+      "chain": "solana",
+      "topN": 10,
+      "pollMs": 60000,
+      "backoff": {
+        "baseMs": 2000,
+        "maxMs": 60000,
+        "factor": 2
+      },
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-13"
+    }
+  }
+}

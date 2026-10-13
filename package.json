@@ -1,0 +1,17 @@
+{
+  "name": "agentvaloria",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agentvaloria — agent infrastructure on Solana.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "gates": "node scripts/gates.mjs",
+    "measure": "node scripts/measure.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

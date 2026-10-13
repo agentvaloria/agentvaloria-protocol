@@ -1,0 +1,53 @@
+
+> agentvaloria@0.1.0 gates
+> node scripts/gates.mjs
+
+PASS  dist: index, favicon, register, tokens present; repo docs absent
+PASS  favicon: svg 32x32, built from the traced pixel grid, achromatic, linked
+PASS  palette: colour literals live only in tokens.css
+PASS  palette: every tokens.css colour is oklch with chroma exactly 0
+PASS  units: no ch units anywhere in src or dist
+PASS  dates: no date/time strings in shipped static files (register.json exempt)
+PASS  register: schema, enum states, inert records carry no value or url
+PASS  hygiene: no assistant config files or attribution strings in the project
+PASS  repo files: README, whitepaper, MIT licence outside dist
+PASS  copy: no shared content 2-grams and none of distinctive reference vocabulary
+PASS  gate-warning: scanner never blanket-rejects 0x hex; matches against stated registry
+PASS  gate-warning: shipped static files carry no unregistered address-shaped string
+PASS  mutation harness: anchors are state-independent (idempotent from any starting state)
+PASS  brand: tokens derive from the logo pixels; favicon grid and mascot re-trace identically
+PASS  ca/stated branch: full address, click copies it, feedback shows then clears
+PASS  ca/stated: registry list shows the address and the CA scanner exemption holds
+PASS  ca/absent branch: top, visible, label + pending, no value, no control, no href
+PASS  market is untouched by CA state (same rows, ticker, fetch count)
+PASS  market: top ten, Solana only, sorted by 24h volume, columns filled
+PASS  market: logos load, missing/failed logos become letter tiles
+PASS  market: copy-per-address button copies the full address with feedback
+PASS  market: ticker uses the same live data as the table
+PASS  status pill: live text with pulsing dot; aggregates, chart and figures filled
+PASS  social: both icons present and inert (no href) in default and forced-absent state
+PASS  social: stated records link out, handle derived from the stored URL
+PASS  register: a stated record with a bad payload is demoted to inert at runtime
+PASS  no dates anywhere in rendered text, attributes, tooltips or aria-labels (all CA/market states)
+PASS  address scanner on rendered DOM: nothing address-shaped outside CA and market zones (CA absent)
+PASS  scroll progress bar fixed at top and grows with scroll; reveals complete
+PASS  parallax layers move with the pointer (spring smoothed)
+PASS  spotlight hover tracks the pointer on rows
+PASS  market: skeletons first, then fade-in stagger to data
+PASS  market: numbers count up through intermediate values before settling
+PASS  market: changed values flash on refresh
+PASS  market: polls on schedule, pauses while hidden, fetches immediately on visible
+PASS  market: default poll interval is 60s from the register record
+PASS  market failure: dash + error shown, retries back off exponentially
+PASS  market failure after success: last good data kept, status stale, recovers
+PASS  market source inert: no request is made and the panel reads pending
+PASS  reduced motion: nothing animates, content is visible at once, numbers land instantly
+PASS  network: only mocked/expected hosts are contacted, no console or page errors
+PASS  breakpoint 360: no overflow, 44x44 taps, icons top-right, CA visible, no ch
+PASS  breakpoint 390: no overflow, 44x44 taps, icons top-right, CA visible, no ch
+PASS  breakpoint 430: no overflow, 44x44 taps, icons top-right, CA visible, no ch
+PASS  breakpoint 1366: no overflow, 44x44 taps, icons top-right, CA visible, no ch
+PASS  breakpoint 1440: no overflow, 44x44 taps, icons top-right, CA visible, no ch
+
+GATES: 46/46 passed, 0 failed
+EXIT=0

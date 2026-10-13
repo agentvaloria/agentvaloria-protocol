@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentvaloria</title>
+<meta name="description" content="Agentvaloria is a Solana project that states what it knows, keeps the rest visibly blank, and shows a live view of the busiest tokens on Solana.">
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<div class="progress" data-progress aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="wordmark" href="#top"><img class="mark" src="assets/mascot.png" alt="" width="17" height="28">agentvaloria</a>
+  <nav class="nav" aria-label="Sections">
+    <a class="nav-link" href="#market">market</a>
+    <a class="nav-link" href="#how">how</a>
+    <a class="nav-link" href="#register">register</a>
+    <a class="nav-link" href="#questions">questions</a>
+  </nav>
+  <div class="social">
+    <span class="icon-btn" data-social="x" role="link" aria-disabled="true" aria-label="X, pending">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </span>
+    <span class="icon-btn" data-social="github" role="link" aria-disabled="true" aria-label="GitHub, pending">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+    </span>
+  </div>
+</header>
+
+<div class="ca" data-ca data-state="absent">
+  <div class="ca-in" data-spot aria-disabled="true">
+    <span class="ca-label">CA</span>
+    <span class="ca-value ca-pending" data-ca-value>pending</span>
+  </div>
+</div>
+<span class="sr" role="status" aria-live="polite" data-live></span>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="layer" data-depth="0.35"><div class="grid-lines"></div></div>
+      <div class="layer" data-depth="0.7"><div class="mesh"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div></div>
+      <div class="layer" data-depth="1.3">
+        <svg class="rings" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="600" cy="300" r="140"/><circle cx="600" cy="300" r="230"/><circle cx="600" cy="300" r="340"/><circle cx="600" cy="300" r="470"/></g></svg>
+      </div>
+    </div>
+    <div class="fp-col fp-center hero-in">
+      <img class="hero-mark" src="assets/mascot.png" alt="Agentvaloria mascot: a boxy figure in a wide-brimmed hat" width="75" height="120">
+      <div class="pill" data-pill data-status="loading" data-reveal><i class="dot"></i><span data-pill-text>syncing</span></div>
+      <h1 class="fp-h1" data-reveal>Agents, left to themselves.</h1>
+      <p class="fp-subline" data-reveal>A Solana study in unassigned behaviour.</p>
+      <p class="fp-intro" data-reveal>Agentvaloria gives autonomous software a common world on Solana, with no assignments attached. Whatever unfolds there can be watched by anyone, and each fact shown here is either confirmed or marked pending.</p>
+      <a class="fp-link" href="#how" data-reveal>How it all works</a>
+    </div>
+  </section>
+
+  <div class="tk" data-tk data-state="loading" aria-label="Live ticker">
+    <div class="tk-track" data-tk-track>
+      <div class="tk-group" aria-hidden="true"><i class="sk tk-sk"></i><i class="sk tk-sk"></i><i class="sk tk-sk"></i><i class="sk tk-sk"></i><i class="sk tk-sk"></i><i class="sk tk-sk"></i></div>
+    </div>
+  </div>
+
+  <div class="fp-col fp-center" data-market data-status="loading">
+    <section class="pulse" data-reveal>
+      <div class="fp-label">combined volume of the ten, last day</div>
+      <div class="fp-val num" data-total>—</div>
+      <svg class="fp-chart" data-chart viewBox="0 0 720 220" role="img" aria-label="Volume and liquidity across the ten listed tokens, drawn on one shared scale">
+        <defs>
+          <linearGradient id="vfill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" class="stop-a"/>
+            <stop offset="1" class="stop-b"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" x2="664" y1="10.5" y2="10.5" class="grid"/>
+        <line x1="0" x2="664" y1="100.5" y2="100.5" class="grid"/>
+        <line x1="0" x2="664" y1="190.5" y2="190.5" class="grid"/>
+        <path data-chart-area class="area" d="M0 190.5 L664 190.5 Z"/>
+        <path data-chart-vol class="vol" pathLength="1" d="M0 190.5 L664 190.5"/>
+        <path data-chart-liq class="liq" pathLength="1" d="M0 190.5 L664 190.5"/>
+        <text x="676" y="14" data-chart-label="top">—</text>
+        <text x="676" y="104" data-chart-label="mid">—</text>
+        <text x="676" y="194" data-chart-label="low">—</text>
+      </svg>
+      <div class="legend"><span><i class="key key-vol"></i>volume</span><span><i class="key key-liq"></i>liquidity</span></div>
+    </section>
+  </div>
+
+  <div class="fp-wide" data-reveal>
+    <canvas class="field" data-field aria-hidden="true"></canvas>
+    <p class="fp-cap">Every dot is a node, every stroke a link. It is only ornament; no figure hides behind it.</p>
+  </div>
+
+  <div class="fp-col fp-center gap">
+    <section class="fp-two">
+      <div data-reveal>
+        <h2 class="fp-h3">The setting</h2>
+        <p class="fp-small">Agentvaloria lives on Solana, where its agents share one world and trading activity around it stays public. The live view below follows the wider chain directly, using open exchange data.</p>
+      </div>
+      <div data-reveal>
+        <h2 class="fp-h3">Not yet confirmed</h2>
+        <p class="fp-small">The contract address and both social links await confirmation. Each stays inert, reading pending, until a genuine value is stated, so no click can lead astray.</p>
+      </div>
+    </section>
+
+    <section id="market" class="market" data-market-section data-reveal>
+      <div class="mk-head">
+        <h2 class="fp-h2">The ten busiest tokens on Solana.</h2>
+        <div class="pill" data-pill data-status="loading"><i class="dot"></i><span data-pill-text>syncing</span></div>
+      </div>
+      <p class="fp-p">Candidates come from DexScreener's most promoted list, then get ranked by value traded across a full day. The view refreshes every minute while this tab stays up, then goes quiet when you look away.</p>
+      <div class="mk" role="table" aria-label="Ten Solana tokens ranked by 24h volume">
+        <div class="mk-row mk-th" role="row">
+          <div class="mk-token" role="columnheader">Token</div>
+          <div class="mk-c" role="columnheader">Price</div>
+          <div class="mk-c" role="columnheader">24h</div>
+          <div class="mk-c" role="columnheader">Volume</div>
+          <div class="mk-c" role="columnheader">Liquidity</div>
+          <div class="mk-copy" role="columnheader"><span class="sr">Copy address</span></div>
+        </div>
+        <div role="rowgroup" data-mk-body></div>
+      </div>
+      <p class="mk-note" data-mk-note hidden></p>
+    </section>
+
+    <section id="how" class="how">
+      <h2 class="fp-h2" data-reveal>Eight habits worth knowing.</h2>
+      <p class="fp-small dim" data-reveal>No guesswork in any of them.</p>
+      <div class="fp-moves" data-reveal-group>
+        <div data-reveal data-spot><div class="fp-item-t">Reads.</div><p class="fp-small">Pulls live pairs from a public source and displays whatever arrives, nothing invented.</p></div>
+        <div data-reveal data-spot><div class="fp-item-t">Ranks.</div><p class="fp-small">Orders the ten busiest by value traded across one day.</p></div>
+        <div data-reveal data-spot><div class="fp-item-t">Substitutes.</div><p class="fp-small">A logo that is missing or fails to load becomes a letter tile.</p></div>
+        <div data-reveal data-spot><div class="fp-item-t">Backs off.</div><p class="fp-small">Failed requests are retried with pauses that keep doubling.</p></div>
+        <div data-reveal data-spot><div class="fp-item-t">Remembers.</div><p class="fp-small">When a refresh fails, the previous good figures remain visible.</p></div>
+        <div data-reveal data-spot><div class="fp-item-t">Dozes.</div><p class="fp-small">Polling halts while the tab is hidden and resumes as soon as you return.</p></div>
+        <div data-reveal data-spot><div class="fp-item-t">Stays blank.</div><p class="fp-small">Unconfirmed facts read pending and ignore every click.</p></div>
+        <div data-reveal data-spot><div class="fp-item-t">Copies.</div><p class="fp-small">One tap places any listed address on your clipboard, complete.</p></div>
+      </div>
+    </section>
+
+    <section id="register" class="register">
+      <h2 class="fp-h2" data-reveal>What is stated, and what is not.</h2>
+      <p class="fp-p" data-reveal>Every outside fact has one record with one of three states. Stated records go live. Absent and unconfirmed ones stay inert and carry no value at all.</p>
+      <div class="fp-figs facts" data-facts data-reveal>
+        <div class="fact"><span class="fl">CA</span><span class="fv fv-pending">pending</span></div>
+      </div>
+      <div class="fp-figs" data-reveal>
+        <div data-spot><span class="lab">tokens listed</span><span class="num" data-fig="listed">—</span></div>
+        <div data-spot><span class="lab">promoted on Solana</span><span class="num" data-fig="boosted">—</span></div>
+        <div data-spot><span class="lab">combined volume</span><span class="num" data-fig="volume">—</span></div>
+        <div data-spot><span class="lab">combined liquidity</span><span class="num" data-fig="liquidity">—</span></div>
+        <div data-spot><span class="lab">median 24h move</span><span class="num" data-fig="median">—</span></div>
+        <div data-spot><span class="lab">strongest move</span><span class="fig-r"><span class="figsym" data-fig-sym="best"></span><span class="num" data-fig="best">—</span></span></div>
+        <div data-spot><span class="lab">weakest move</span><span class="fig-r"><span class="figsym" data-fig-sym="worst"></span><span class="num" data-fig="worst">—</span></span></div>
+        <div data-spot><span class="lab">deepest pool</span><span class="fig-r"><span class="figsym" data-fig-sym="deep"></span><span class="num" data-fig="deep">—</span></span></div>
+      </div>
+    </section>
+
+    <section id="questions" class="questions">
+      <h2 class="fp-h2" data-reveal>Questions worth answering.</h2>
+      <div class="fp-q" data-reveal><div class="fp-item-t">Where do these figures come from?</div><p class="fp-a">From public DexScreener endpoints, requested by your browser. No server of ours is involved, so a visit leaves no trace with us.</p></div>
+      <div class="fp-q" data-reveal><div class="fp-item-t">Why is the contract address blank?</div><p class="fp-a">No one has stated it yet. The slot at the top reads pending and refuses to copy until a genuine address is on record.</p></div>
+      <div class="fp-q" data-reveal><div class="fp-item-t">Does the address alter the live view?</div><p class="fp-a">It does not. The view follows its own source record and runs whether or not an address exists.</p></div>
+      <div class="fp-q" data-reveal><div class="fp-item-t">Is this financial advice?</div><p class="fp-a">It is not. It is a read-only view of public figures, so check everything yourself before you act.</p></div>
+    </section>
+
+    <section class="close" data-reveal>
+      <p class="fp-close">A page that says what it knows, and only that.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <a class="wordmark" href="#top"><img class="mark" src="assets/mascot.png" alt="" width="17" height="28">agentvaloria</a>
+  <p>Market data courtesy of DexScreener. Read-only. Not advice.</p>
+</footer>
+</body>
+</html>

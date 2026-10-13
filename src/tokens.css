@@ -1,0 +1,38 @@
+/* The only file in the project that may hold colour literals.
+
+   Provenance (brand/LOGO VALORIA PNG.png, 2000x2000 RGBA, IHDR colourtype 6):
+     ground  0 0 0        97.5% of pixels, the logo's own background
+     ink     252 252 252  modal colour of the solid stroke core
+   Channel spread across opaque pixels is 5 or less (encoder noise), so both tones
+   are treated as achromatic: chroma is exactly 0 on every entry below.
+   Every other step is the stroke tone at partial alpha over the ground, the same
+   anti-aliasing ramp the logo itself passes through. No other colour is introduced.
+   The lightness values are re-derived from the PNG by the gates. */
+:root {
+  --ground: oklch(0 0 0);
+  --ink: oklch(0.991 0 0);
+
+  --ink-1: oklch(0.991 0 0 / 0.86);
+  --ink-2: oklch(0.991 0 0 / 0.68);
+  --ink-3: oklch(0.991 0 0 / 0.5);
+  --ink-4: oklch(0.991 0 0 / 0.36);
+  --line-2: oklch(0.991 0 0 / 0.26);
+  --line: oklch(0.991 0 0 / 0.14);
+  --ground-2: oklch(0.991 0 0 / 0.09);
+  --ground-1: oklch(0.991 0 0 / 0.045);
+
+  --veil-1: oklch(0.991 0 0 / 0.04);
+  --veil-2: oklch(0.991 0 0 / 0.08);
+  --veil-3: oklch(0.991 0 0 / 0.16);
+  --veil-4: oklch(0.991 0 0 / 0.3);
+  --scrim: oklch(0 0 0 / 0.72);
+  --clear: oklch(0 0 0 / 0);
+
+  --mesh-1: oklch(0.991 0 0 / 0.1);
+  --mesh-2: oklch(0.991 0 0 / 0.07);
+  --mesh-3: oklch(0.991 0 0 / 0.09);
+
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
